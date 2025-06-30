@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface VisitorRepository extends JpaRepository<Visitor, Long> {
+
+    Visitor getVisitorById(int id);
 }

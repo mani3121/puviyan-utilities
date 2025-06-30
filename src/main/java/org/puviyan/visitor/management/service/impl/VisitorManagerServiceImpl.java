@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class VisitorManagerServiceImpl implements VisitorManagementService {
@@ -27,5 +28,17 @@ public class VisitorManagerServiceImpl implements VisitorManagementService {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public void saveLogout(int id){
+        Visitor visitor = visitorRepository.getVisitorById(id);
+        visitor.setLogoutTime(LocalDateTime.now());
+        visitorRepository.save(visitor);
+
+    }
+
+    @Override
+    public List<Visitor> getAllVisitors() {
+        return visitorRepository.findAll();
     }
 }

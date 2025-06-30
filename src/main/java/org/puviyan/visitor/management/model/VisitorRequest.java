@@ -15,6 +15,4 @@ public class VisitorRequest {
     private String mobileNumber;
     private String email;
     private boolean loggedOut;
-    private String loginTime;
-    private String logoutTime;
 }
