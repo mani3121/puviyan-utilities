@@ -53,7 +53,7 @@ public class VisitorManagementController {
             @RequestParam String logoutDate) {
 
         // Expecting format "01-Jul-25"
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDateTime loginDateTime;
         LocalDateTime logoutDateTime;
         try {
