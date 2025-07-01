@@ -35,4 +35,13 @@ public class Visitor {
 
     @Column(name = "logout_time")
     private LocalDateTime logoutTime;
+
+    @Column(name = "identity_proof")
+    private String identityProof;
+
+    @Column(name ="identity_number")
+    private String identityNumber;
+
+    @Column(name ="puviyan_buddy")
+    private String puviyanBuddy;
 }

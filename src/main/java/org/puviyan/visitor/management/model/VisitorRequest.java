@@ -12,7 +12,10 @@ import lombok.NoArgsConstructor;
 public class VisitorRequest {
 
     private String name;
-    private String mobileNumber;
+    private String phoneNumber;
     private String email;
     private boolean loggedOut;
+    private String identityProof;
+    private String identityNumber;
+    private String puviyanBuddy;
 }

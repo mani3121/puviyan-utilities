@@ -20,7 +20,7 @@ public class VisitorManagerServiceImpl implements VisitorManagementService {
         try {
             Visitor visitor = new Visitor();
             visitor.setName(request.getName());
-            visitor.setPhoneNumber(request.getMobileNumber());
+            visitor.setPhoneNumber(request.getPhoneNumber());
             visitor.setEmail(request.getEmail());
             visitor.setLoginTime(LocalDateTime.now().withNano(0));
             visitorRepository.save(visitor);
@@ -40,5 +40,10 @@ public class VisitorManagerServiceImpl implements VisitorManagementService {
     @Override
     public List<Visitor> getAllVisitors() {
         return visitorRepository.findAll();
+    }
+
+    @Override
+    public List<Visitor> getVisitorsByLoginAndLogoutDate(LocalDateTime loginDate, LocalDateTime logoutDate) {
+        return visitorRepository.findByLoginTimeGreaterThanEqualAndLogoutTimeLessThanEqual(loginDate, logoutDate);
     }
 }
