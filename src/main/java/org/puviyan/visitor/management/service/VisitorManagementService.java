@@ -8,6 +8,6 @@ import java.util.List;
 public interface VisitorManagementService {
 
    boolean saveVisitor(VisitorRequest request);
-   void saveLogout(int id);
+   boolean saveLogout(int id);
    List<Visitor> getAllVisitors();
 }

@@ -29,8 +29,8 @@ public class VisitorManagementController {
     }
 
     @PostMapping("/logout")
-    public void logout(@RequestParam int id) {
-       visitorManagementService.saveLogout(id);
+    public boolean logout(@RequestParam int id) {
+       return visitorManagementService.saveLogout(id);
     }
 
     @GetMapping("/getVisitors")

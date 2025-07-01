@@ -22,7 +22,7 @@ public class VisitorManagerServiceImpl implements VisitorManagementService {
             visitor.setName(request.getName());
             visitor.setPhoneNumber(request.getMobileNumber());
             visitor.setEmail(request.getEmail());
-            visitor.setLoginTime(LocalDateTime.now());
+            visitor.setLoginTime(LocalDateTime.now().withNano(0));
             visitorRepository.save(visitor);
             return true;
         } catch (Exception e) {
@@ -30,11 +30,11 @@ public class VisitorManagerServiceImpl implements VisitorManagementService {
         }
     }
 
-    public void saveLogout(int id){
+    public boolean saveLogout(int id){
         Visitor visitor = visitorRepository.getVisitorById(id);
-        visitor.setLogoutTime(LocalDateTime.now());
+        visitor.setLogoutTime(LocalDateTime.now().withNano(0));
         visitorRepository.save(visitor);
-
+        return true;
     }
 
     @Override
