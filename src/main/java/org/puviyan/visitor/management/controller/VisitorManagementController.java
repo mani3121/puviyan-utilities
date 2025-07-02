@@ -38,13 +38,13 @@ public class VisitorManagementController {
     }
 
     @PostMapping("/logout")
-    public boolean logout(@RequestParam int id) {
+    public boolean logout(@RequestBody long id) {
        return visitorManagementService.saveLogout(id);
     }
 
     @GetMapping("/getVisitors")
-    public List<Visitor> getVisitors() {
-       return visitorManagementService.getAllVisitors();
+    public List<Visitor> getVisitors(){
+        return visitorManagementService.getAllVisitors();
     }
 
     @GetMapping("/exportVisitors")

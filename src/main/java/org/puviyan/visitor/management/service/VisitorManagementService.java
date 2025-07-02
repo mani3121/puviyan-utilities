@@ -9,8 +9,8 @@ import java.util.List;
 public interface VisitorManagementService {
 
    boolean saveVisitor(VisitorRequest request);
-   boolean saveLogout(int id);
+   boolean saveLogout(Long id);
    List<Visitor> getAllVisitors();
-
+   List<Visitor> getVisitorsWithPagination(int page, int size);
    List<Visitor> getVisitorsByLoginAndLogoutDate(LocalDateTime loginDate, LocalDateTime logoutDate);
 }
